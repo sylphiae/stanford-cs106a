@@ -26,10 +26,10 @@ public class StoneMasonKarel extends SuperKarel {
      */
     private void moveKarelEast() {
         faceDirection(Direction.EAST);
-            move();
-            move();
-            move();
-            move();
+        move();
+        move();
+        move();
+        move();
     }
 
     private enum Direction {
@@ -40,25 +40,25 @@ public class StoneMasonKarel extends SuperKarel {
     This is a helper function which turns Karel until it is facing in the desired compass direction.
      */
 
-    private void faceDirection(Direction direction){
-        switch(direction){
+    private void faceDirection(Direction direction) {
+        switch(direction) {
             case NORTH:
-                while (!facingNorth()){
+                while (!facingNorth()) {
                     turnLeft();
                 }
                 break;
             case EAST:
-                while (!facingEast()){
+                while (!facingEast()) {
                     turnLeft();
                 }
                 break;
             case SOUTH:
-                while (!facingSouth()){
+                while (!facingSouth()) {
                     turnLeft();
                 }
                 break;
             case WEST:
-                while(!facingWest()){
+                while(!facingWest()) {
                     turnLeft();
                 }
                 break;
