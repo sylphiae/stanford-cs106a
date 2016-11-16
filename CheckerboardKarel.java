@@ -11,6 +11,29 @@ import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
 
-	// You fill in this part
+	public void run() {
+        while (frontIsClear()) {
+            karelPlacesCheckers();
+            karelMovesOver();
+        }
+    }
 
+    private void karelPlacesCheckers() {
+        StoneMasonKarel.faceDirection(StoneMasonKarel.Direction.NORTH);
+        while (frontIsClear()) {
+            putBeeper();
+            move();
+        }
+        if (noBeepersPresent()){
+            putBeeper();
+        }
+        StoneMasonKarel.faceDirection(StoneMasonKarel.Direction.SOUTH);
+        while (frontIsClear()) {
+            move();
+        }
+    }
+    private void karelMovesOver() {
+        StoneMasonKarel.faceDirection(StoneMasonKarel.Direction.EAST);
+        move();
+    }
 }

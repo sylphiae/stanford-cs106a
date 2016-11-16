@@ -6,6 +6,8 @@
  * problem from Assignment 1.  In addition to editing the program,
  * you should be sure to edit this comment so that it no longer
  * indicates that the program does nothing.
+ *
+ * This program now runs Karel successfully in the maps that are provided.
  */
 
 import stanford.karel.*;
@@ -32,7 +34,7 @@ public class StoneMasonKarel extends SuperKarel {
         move();
     }
 
-    private enum Direction {
+    public enum Direction {
         NORTH, EAST, SOUTH, WEST
     }
 
@@ -40,7 +42,7 @@ public class StoneMasonKarel extends SuperKarel {
     This is a helper function which turns Karel until it is facing in the desired compass direction.
      */
 
-    private void faceDirection(Direction direction) {
+    public void faceDirection(Direction direction) {
         switch(direction) {
             case NORTH:
                 while (!facingNorth()) {
