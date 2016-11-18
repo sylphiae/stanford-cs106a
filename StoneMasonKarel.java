@@ -10,9 +10,7 @@
  * This program now runs Karel successfully in the maps that are provided.
  */
 
-import stanford.karel.*;
-
-public class StoneMasonKarel extends SuperKarel {
+public class StoneMasonKarel extends SuperDuperKarel {
 
     public void run() {
         while (frontIsClear()){
@@ -34,39 +32,9 @@ public class StoneMasonKarel extends SuperKarel {
         move();
     }
 
-    public enum Direction {
-        NORTH, EAST, SOUTH, WEST
-    }
-
     /*
     This is a helper function which turns Karel until it is facing in the desired compass direction.
      */
-
-    public void faceDirection(Direction direction) {
-        switch(direction) {
-            case NORTH:
-                while (!facingNorth()) {
-                    turnLeft();
-                }
-                break;
-            case EAST:
-                while (!facingEast()) {
-                    turnLeft();
-                }
-                break;
-            case SOUTH:
-                while (!facingSouth()) {
-                    turnLeft();
-                }
-                break;
-            case WEST:
-                while(!facingWest()) {
-                    turnLeft();
-                }
-                break;
-        }
-
-    }
 
     /*
    This method has Karel restore the column

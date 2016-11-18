@@ -7,9 +7,7 @@
  * worlds supplied in the starter folder.
  */
 
-import stanford.karel.*;
-
-public class CheckerboardKarel extends SuperKarel {
+public class CheckerboardKarel extends SuperDuperKarel {
 
 	public void run() {
         while (frontIsClear()) {
@@ -19,7 +17,7 @@ public class CheckerboardKarel extends SuperKarel {
     }
 
     private void karelPlacesCheckers() {
-        StoneMasonKarel.faceDirection(StoneMasonKarel.Direction.NORTH);
+        faceDirection(Direction.NORTH);
         while (frontIsClear()) {
             putBeeper();
             move();
@@ -27,13 +25,13 @@ public class CheckerboardKarel extends SuperKarel {
         if (noBeepersPresent()){
             putBeeper();
         }
-        StoneMasonKarel.faceDirection(StoneMasonKarel.Direction.SOUTH);
+        StoneMasonKarel.faceDirection(SuperDuperKarel.Direction.SOUTH);
         while (frontIsClear()) {
             move();
         }
     }
     private void karelMovesOver() {
-        StoneMasonKarel.faceDirection(StoneMasonKarel.Direction.EAST);
+        StoneMasonKarel.faceDirection(SuperDuperKarel.Direction.EAST);
         move();
     }
 }
