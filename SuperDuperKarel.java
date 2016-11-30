@@ -1,8 +1,5 @@
 import stanford.karel.SuperKarel;
 
-/**
- * Created by jenny on 11/18/16.
- */
 public class SuperDuperKarel extends SuperKarel {
     public void faceDirection(StoneMasonKarel.Direction direction) {
         switch(direction) {

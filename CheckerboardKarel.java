@@ -19,19 +19,20 @@ public class CheckerboardKarel extends SuperDuperKarel {
     private void karelPlacesCheckers() {
         faceDirection(Direction.NORTH);
         while (frontIsClear()) {
+            move();
             putBeeper();
             move();
         }
         if (noBeepersPresent()){
             putBeeper();
         }
-        StoneMasonKarel.faceDirection(SuperDuperKarel.Direction.SOUTH);
+        faceDirection(SuperDuperKarel.Direction.SOUTH);
         while (frontIsClear()) {
             move();
         }
     }
     private void karelMovesOver() {
-        StoneMasonKarel.faceDirection(SuperDuperKarel.Direction.EAST);
+        faceDirection(SuperDuperKarel.Direction.EAST);
         move();
     }
 }

@@ -21,7 +21,6 @@ public class CheckerboardKarelRewrite extends SuperDuperKarel {
         }
         faceDirection(Direction.EAST);
         move();
-        }
         faceDirection(Direction.NORTH);
     }
 
@@ -65,3 +64,4 @@ public class KarelExample {
     }
 
 }
+*/
