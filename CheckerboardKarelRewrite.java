@@ -2,9 +2,65 @@ import stanford.karel.SuperKarel;
 
 public class CheckerboardKarelRewrite extends SuperDuperKarel {
 
-	public void run() {
+    public void run() {
+        while (true) {
+            if (frontIsClear()) {
+                karelMakesCheckerColumnA();
+                karelMakesCheckerColumnB();
+            } else {
+                break;
+            }
+        }
+    }
+
+
+    /*
+   This method moves Karel up a down the even "A" columns, creating a checkers pattern, then moves Karel east 1 square
+    */
+    private void karelMakesCheckerColumnA() {
         int squaresTraveled = 0;
-        while (true){
+        faceDirection(Direction.NORTH);
+        while (true) {
+            putBeeper();
+            if (frontIsClear()) {
+                move();
+                squaresTraveled++;
+            } else {
+                //Leave the loop
+                break;
+            }
+            if (frontIsClear()) {
+                move();
+                squaresTraveled++;
+            } else {
+                //Leave the loop
+                break;
+            }
+        }
+
+        turnAround();
+        for (int i = 0; i < squaresTraveled; i++) {
+            move();
+        }
+        faceDirection(Direction.EAST);
+        move();
+        faceDirection(Direction.NORTH);
+    }
+
+    /*
+   This method moves Karel up a down the odd "B" columns, creating a checkers pattern, then moves Karel east 1 square
+    */
+    private void karelMakesCheckerColumnB() {
+        int squaresTraveled = 0;
+        faceDirection(Direction.NORTH);
+        while (true) {
+            if (frontIsClear()) {
+                move();
+                squaresTraveled++;
+            } else {
+                //Leave the loop
+                break;
+            }
             putBeeper();
             if (frontIsClear()) {
                 move();
@@ -16,14 +72,13 @@ public class CheckerboardKarelRewrite extends SuperDuperKarel {
         }
 
         turnAround();
-        for (int i = 0 ; i < squaresTraveled ; i++) {
+        for (int i = 0; i < squaresTraveled; i++) {
             move();
         }
         faceDirection(Direction.EAST);
         move();
         faceDirection(Direction.NORTH);
     }
-
 }
 
 /*
