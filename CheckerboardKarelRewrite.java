@@ -5,14 +5,55 @@ public class CheckerboardKarelRewrite extends SuperDuperKarel {
     public void run() {
         while (true) {
             if (frontIsClear()) {
-                karelMakesCheckerColumnA();
-                karelMakesCheckerColumnB();
-            } else {
+                faceDirection(Direction.NORTH);
+                createsCheckerboard();
+            } else if (rightIsBlocked()) {
+                putBeeper();
+                break;
+            } else{
                 break;
             }
         }
     }
 
+    private void createsCheckerboard() {
+        while (true) {
+            if (frontIsClear()) {
+                karelPutsChecker();
+                karelSkipsSpace();
+            } else {
+                moveOver();
+                break;
+            }
+        }
+    }
+
+    private void karelPutsChecker(){
+        putBeeper();
+        move();
+    }
+
+    private void karelSkipsSpace(){
+        move();
+    }
+
+    private void moveOver() {
+        if (facingNorth()) {
+            faceDirection(Direction.EAST);
+            move();
+            faceDirection(Direction.SOUTH);
+        } else {
+            faceDirection(Direction.EAST);
+            move();
+            faceDirection(Direction.NORTH);
+        }
+    }
+
+    /* This boolean was meant to check Karel's state but I'm not sure if it's actually necessary
+    private boolean karelPlacedChecker() {
+        this.
+    }
+    */
 
     /*
    This method moves Karel up a down the even "A" columns, creating a checkers pattern, then moves Karel east 1 square
