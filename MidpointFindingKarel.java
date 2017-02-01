@@ -14,6 +14,19 @@ import stanford.karel.*;
 
 public class MidpointFindingKarel extends SuperKarel {
 
-	// You fill in this part
+	public void run() {
+        int squaresTraveled = 0;
+        while (!frontIsBlocked()){
+            move();
+            squaresTraveled++;
+            }
+        turnAround();
+        int midpoint = (squaresTraveled/2);
+        for (int i = 0; i < midpoint; i++) {
+            move();
+        }
+        }
+    }
 
-}
+
+
